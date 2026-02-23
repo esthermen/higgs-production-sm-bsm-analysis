@@ -1,0 +1,10 @@
+Energy,Process,MaxSigma,MeanSigma,MaxEvents,Max_x,Max_b4
+500GeV,h1h1,nan,nan,nan,47.0,0.4444444
+500GeV,h1h2,nan,nan,nan,47.0,0.1111111
+500GeV,h2h2,nan,nan,nan,35.15385,-910.2845
+1000GeV,h1h1,nan,nan,nan,47.0,0.4444444
+1000GeV,h1h2,nan,nan,nan,47.0,0.4444444
+1000GeV,h2h2,nan,nan,nan,47.0,0.1111111
+1500GeV,h1h1,nan,nan,nan,47.0,0.4444444
+1500GeV,h1h2,nan,nan,nan,47.0,0.4444444
+1500GeV,h2h2,nan,nan,nan,47.0,0.4444444
