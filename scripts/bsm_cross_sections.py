@@ -1,17 +1,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import csv
 
 
 ENERGIES = ["500GeV", "1000GeV", "1500GeV"]
 PROCESSES = ["h1h1", "h1h2", "h2h2"]
 
+LUMINOSITIES = {
+    "500GeV": 4e6,
+    "1000GeV": 8e6,
+    "1500GeV": 2.5e6,
+}
+
+HBB = 0.584
+
 
 def load_cross_section(energy, process):
-    """
-    Load cross section file for a given energy and process.
-    Expected format: x   b4   sigma
-    """
     path = os.path.join(
         "..", "data", "raw", "bsm", energy, f"{process}.txt"
     )
@@ -38,82 +43,65 @@ def save_scatter(x, b4, values, title, cbar_label, filename):
     plt.close()
 
 
-def cross_section_analysis():
+def compute_events(process, sigma, energy):
 
-    for energy in ENERGIES:
-        for process in PROCESSES:
+    L = LUMINOSITIES[energy]
 
-            data = load_cross_section(energy, process)
-
-            x = data[:, 0]
-            b4 = data[:, 1]
-            sigma = data[:, 2] * 1000  # convert to fb
-
-            title = f"{process} production at {energy}"
-            filename = f"bsm_{process}_{energy}.png"
-
-            save_scatter(
-                x,
-                b4,
-                sigma,
-                title,
-                "Cross Section [fb]",
-                filename,
-            )
-
-    print("Cross section plots generated.")
+    if process == "h1h1":
+        return sigma * L * HBB**2
+    elif process == "h1h2":
+        return sigma * L * HBB
+    else:
+        return sigma * L
 
 
-def event_estimation():
+def generate_summary_csv():
 
-    # Luminosities in fb^-1
-    luminosities = {
-        "500GeV": 4e6,
-        "1000GeV": 8e6,
-        "1500GeV": 2.5e6,
-    }
+    output_file = os.path.join(
+        "..", "data", "processed", "bsm_summary.csv"
+    )
 
-    hbb = 0.584  # branching ratio
+    with open(output_file, mode="w", newline="") as file:
+        writer = csv.writer(file)
 
-    for energy in ENERGIES:
-        for process in PROCESSES:
+        writer.writerow([
+            "Energy",
+            "Process",
+            "MaxSigma",
+            "MeanSigma",
+            "MaxEvents",
+            "Max_x",
+            "Max_b4",
+        ])
 
-            data = load_cross_section(energy, process)
+        for energy in ENERGIES:
+            for process in PROCESSES:
 
-            x = data[:, 0]
-            b4 = data[:, 1]
-            sigma = data[:, 2]
+                data = load_cross_section(energy, process)
 
-            L = luminosities[energy]
+                x = data[:, 0]
+                b4 = data[:, 1]
+                sigma = data[:, 2] * 1000  # fb
 
-            if process == "h1h1":
-                events = sigma * L * hbb**2
+                events = compute_events(process, sigma, energy)
 
-            elif process == "h1h2":
-                events = sigma * L * hbb
+                max_index = np.argmax(sigma)
 
-            else:  # h2h2
-                events = sigma * L
+                writer.writerow([
+                    energy,
+                    process,
+                    np.max(sigma),
+                    np.mean(sigma),
+                    np.max(events),
+                    x[max_index],
+                    b4[max_index],
+                ])
 
-            title = f"Expected events {process} at {energy}"
-            filename = f"events_{process}_{energy}.png"
-
-            save_scatter(
-                x,
-                b4,
-                events,
-                title,
-                "Number of events",
-                filename,
-            )
-
-    print("Event estimation plots generated.")
+    print("Summary CSV generated.")
 
 
 def main():
-
-    cross_section_analysis()
-    event_estimation()
+    generate_summary_csv()
 
 
 if __name__ == "__main__":
