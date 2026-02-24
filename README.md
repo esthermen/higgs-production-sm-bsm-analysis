@@ -57,6 +57,13 @@ Evaluated at:
 
 ---
 
+## 📄 Full Thesis
+
+The complete undergraduate thesis is available here:
+
+[Download PDF](docs/TFG_Esther_Menendez_Ibanez.pdf)
+
+---
 ## Author
 
 Esther Menéndez Ibáñez  
