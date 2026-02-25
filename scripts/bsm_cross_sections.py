@@ -90,9 +90,9 @@ def generate_summary_csv():
                 writer.writerow([
                     energy,
                     process,
-                    np.max(sigma),
-                    np.mean(sigma),
-                    np.max(events),
+                    np.nanmax(sigma),
+                    np.nanmean(sigma),
+                    np.nanmax(events),
                     x[max_index],
                     b4[max_index],
                 ])
