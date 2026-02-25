@@ -41,8 +41,8 @@ def generate_process_energy_table():
             for process in PROCESSES:
                 data = load_cross_section(energy, process)
                 sigma = data[:, 2] * 1000  # convert to fb
-                print(energy, process, np.max(sigma))
-                sigmas[process] = np.max(sigma)
+                print(energy, process, np.nanmax(sigma))
+                sigmas[process] = np.nanmax(sigma)
 
             ratio_12 = sigmas["h1h2"] / sigmas["h1h1"]
             ratio_22 = sigmas["h2h2"] / sigmas["h1h1"]
