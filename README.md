@@ -47,7 +47,23 @@ Evaluated at:
 - 1500 GeV  
 
 ---
+## 🎯 Scientific Objectives
 
+This project investigates the production of scalar Higgs pairs in an extended Higgs sector model at electron-positron colliders.
+
+The primary goals are:
+
+- To compute production cross sections for:
+  - h1h1
+  - h1h2
+  - h2h2
+- To analyze their dependence on center-of-mass energy (500, 1000, 1500 GeV)
+- To estimate expected event yields assuming fixed integrated luminosity
+- To compare relative production strengths between scalar channels
+
+The focus is not on SM vs BSM comparison, but on internal hierarchy and energy scaling within the extended scalar sector.
+
+---
 ## Tools Used
 
 - MadGraph5_aMC@NLO  
