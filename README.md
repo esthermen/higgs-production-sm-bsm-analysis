@@ -47,7 +47,7 @@ Evaluated at:
 - 1500 GeV  
 
 ---
-## 🎯 Scientific Objectives
+## Scientific Objectives
 
 This project investigates the production of scalar Higgs pairs in an extended Higgs sector model at electron-positron colliders.
 
@@ -73,7 +73,7 @@ The focus is not on SM vs BSM comparison, but on internal hierarchy and energy s
 
 ---
 
-## 📄 Full Thesis
+## Full Thesis
 
 The complete undergraduate thesis is available here:
 
