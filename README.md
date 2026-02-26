@@ -1,3 +1,7 @@
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![Physics](https://img.shields.io/badge/Field-Computational%20Physics-red)
+![Status](https://img.shields.io/badge/Status-Research%20Project-success)
+
 # Higgs Production in SM and Extended Scalar Models
 
 This repository contains a computational analysis of scalar production processes in the Standard Model (SM) and in an extended scalar sector model.
