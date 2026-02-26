@@ -72,7 +72,17 @@ The focus is not on SM vs BSM comparison, but on internal hierarchy and energy s
 - Matplotlib  
 
 ---
+## 🔁 Reproducibility
 
+All numerical results and plots in this repository can be reproduced by running:
+
+```bash
+python scripts/bsm_cross_sections.py
+python scripts/process_energy_analysis.py
+```
+The analysis assumes raw cross section outputs generated with MadGraph5_aMC@NLO.
+
+---
 ## Full Thesis
 
 The complete undergraduate thesis is available here:
