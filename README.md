@@ -69,7 +69,7 @@ The focus is not on SM vs BSM comparison, but on internal hierarchy and energy s
 
 ---
 
-## ⚙️ Methodology
+##  Methodology
 
 - Matrix element generation: MadGraph5_aMC@NLO
 - Cross section extraction from event files
@@ -81,7 +81,7 @@ NaN values arising from kinematic restrictions are handled using nan-aware stati
 
 ---
 
-## 📊 Results Overview
+##  Results Overview
 
 ### BSM Results
 
@@ -92,8 +92,9 @@ The h1h1 channel dominates at lower energies, while heavier scalar production be
 ### SM Validation
 
 ![SM Validation](results/plots/sm_energy_scan.png)
-
 The Standard Model calculation was used as a validation benchmark against known results.
+
+
 ---
 ## Tools Used
 
@@ -103,7 +104,7 @@ The Standard Model calculation was used as a validation benchmark against known 
 - Matplotlib  
 
 ---
-## 🔁 Reproducibility
+##  Reproducibility
 
 All numerical results and plots in this repository can be reproduced by running:
 
@@ -115,7 +116,7 @@ The analysis assumes raw cross section outputs generated with MadGraph5_aMC@NLO.
 
 ---
 
-## 🔬 Potential Extensions
+##  Potential Extensions
 
 - Differential cross section analysis
 - Parameter scan over scalar masses
