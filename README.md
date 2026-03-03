@@ -68,6 +68,33 @@ The primary goals are:
 The focus is not on SM vs BSM comparison, but on internal hierarchy and energy scaling within the extended scalar sector.
 
 ---
+
+## ⚙️ Methodology
+
+- Matrix element generation: MadGraph5_aMC@NLO
+- Cross section extraction from event files
+- Statistical processing with NumPy
+- Log-scale visualization for hierarchical comparison
+- Energy scaling analysis across fixed √s values
+
+NaN values arising from kinematic restrictions are handled using nan-aware statistical estimators.
+
+---
+
+## 📊 Results Overview
+
+### BSM Results
+
+![BSM Example](results/plots/bsm_h1h1_500GeV.png)
+The h1h1 channel dominates at lower energies, while heavier scalar production becomes competitive at √s = 1500 GeV.
+
+
+### SM Validation
+
+![SM Validation](results/plots/sm_energy_scan.png)
+
+The Standard Model calculation was used as a validation benchmark against known results.
+---
 ## Tools Used
 
 - MadGraph5_aMC@NLO  
@@ -87,6 +114,15 @@ python scripts/process_energy_analysis.py
 The analysis assumes raw cross section outputs generated with MadGraph5_aMC@NLO.
 
 ---
+
+## 🔬 Potential Extensions
+
+- Differential cross section analysis
+- Parameter scan over scalar masses
+- Comparison with EFT approximations
+- Collider luminosity scaling studies
+---
+
 ## Full Thesis
 
 The complete undergraduate thesis is available here:
